@@ -1,18 +1,14 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
-
-class AuthRequest {
-	email: string;
-	password: string;
-}
+import { AuthDto } from './dto/auth.dto';
 
 @Controller('auth')
 export class AuthController {
 	constructor(private authService: AuthService) {}
 
 	@Post()
-	auth(@Body() authRequest: AuthRequest): string {
-		return this.authService.auth(authRequest.email, authRequest.password);
+	auth(@Body() authDto: AuthDto): string {
+		return this.authService.auth(authDto.email, authDto.password);
 	}
 
 	@Post('recover-password')
