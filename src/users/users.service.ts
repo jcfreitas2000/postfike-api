@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { UserEntity } from './entities/user.entity';
 
 @Injectable()
 export class UsersService {
-	private readonly users = [
+	private readonly users: UserEntity[] = [
 		{
 			id: '1',
 			name: 'José',
@@ -19,7 +20,7 @@ export class UsersService {
 		},
 	];
 
-	async findByEmail(email: string): Promise<any> {
+	async findByEmail(email: string): Promise<UserEntity> {
 		return this.users.find((user) => user.email === email);
 	}
 }
