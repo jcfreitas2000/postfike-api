@@ -8,12 +8,14 @@ import {
 	UseGuards,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { LocalAuthGuard } from './local-auth.guard';
+import { LocalAuthGuard } from './passport/local-auth.guard';
+import { Public } from './passport/public.decorator';
 
 @Controller('auth')
 export class AuthController {
 	constructor(private authService: AuthService) {}
 
+	@Public()
 	@UseGuards(LocalAuthGuard)
 	@Post('login')
 	@HttpCode(HttpStatus.OK)
@@ -21,6 +23,7 @@ export class AuthController {
 		return this.authService.login(request.user);
 	}
 
+	@Public()
 	@Post('recover-password')
 	recoverPassword(@Body('email') email: string): string {
 		return this.authService.recoverPassword(email);
