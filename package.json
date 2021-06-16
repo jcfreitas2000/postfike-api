@@ -28,6 +28,7 @@
         "@nestjs/mapped-types": "^0.4.1",
         "@nestjs/passport": "^7.1.5",
         "@nestjs/platform-express": "^7.6.15",
+        "helmet": "^4.6.0",
         "passport": "^0.4.1",
         "passport-jwt": "^4.0.0",
         "passport-local": "^1.0.0",
