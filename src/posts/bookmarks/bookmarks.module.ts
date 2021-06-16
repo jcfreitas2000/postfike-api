@@ -3,7 +3,7 @@ import { BookmarksController } from './bookmarks.controller';
 import { BookmarksService } from './bookmarks.service';
 
 @Module({
-	controllers: [BookmarksController],
-	providers: [BookmarksService],
+    controllers: [BookmarksController],
+    providers: [BookmarksService],
 })
 export class BookmarksModule {}

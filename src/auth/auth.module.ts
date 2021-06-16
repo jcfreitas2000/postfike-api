@@ -10,28 +10,28 @@ import { JwtStrategy } from './passport/jwt.strategy';
 import { JwtAuthGuard } from './passport/jwt-auth.guard';
 
 @Module({
-	controllers: [AuthController],
-	imports: [
-		UsersModule,
-		PassportModule,
-		JwtModule.registerAsync({
-			useFactory: async (configService: ConfigService) => ({
-				secret: configService.get<string>('JWT_SECRET'),
-				signOptions: {
-					expiresIn: configService.get<string>(
-						'JWT_ACCESS_TOKEN_EXPIRES_IN',
-					),
-				},
-			}),
-			inject: [ConfigService],
-		}),
-	],
-	exports: [AuthService, JwtModule],
-	providers: [
-		AuthService,
-		LocalStrategy,
-		JwtStrategy,
-		{ provide: 'APP_GUARD', useClass: JwtAuthGuard },
-	],
+    controllers: [AuthController],
+    imports: [
+        UsersModule,
+        PassportModule,
+        JwtModule.registerAsync({
+            useFactory: async (configService: ConfigService) => ({
+                secret: configService.get<string>('JWT_SECRET'),
+                signOptions: {
+                    expiresIn: configService.get<string>(
+                        'JWT_ACCESS_TOKEN_EXPIRES_IN',
+                    ),
+                },
+            }),
+            inject: [ConfigService],
+        }),
+    ],
+    exports: [AuthService, JwtModule],
+    providers: [
+        AuthService,
+        LocalStrategy,
+        JwtStrategy,
+        { provide: 'APP_GUARD', useClass: JwtAuthGuard },
+    ],
 })
 export class AuthModule {}

@@ -4,15 +4,15 @@ import { UpdateProfileDto } from './dto/update-profile.dto';
 
 @Injectable()
 export class ProfileService {
-	find(userId: string): string {
-		return `Authenticated user: ${userId}`;
-	}
+    find(userId: string): string {
+        return `Authenticated user: ${userId}`;
+    }
 
-	create(createProfileDto: CreateProfileDto) {
-		return `Creating user: ${createProfileDto.name}`;
-	}
+    create(createProfileDto: CreateProfileDto) {
+        return `Creating user: ${createProfileDto.name}`;
+    }
 
-	update(updateProfileDto: UpdateProfileDto) {
-		return `Updating user: ${updateProfileDto.name}`;
-	}
+    update(updateProfileDto: UpdateProfileDto) {
+        return `Updating user: ${updateProfileDto.name}`;
+    }
 }

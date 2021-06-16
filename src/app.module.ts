@@ -5,13 +5,13 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-	imports: [
-		PostsModule,
-		ProfileModule,
-		AuthModule,
-		ConfigModule.forRoot({ isGlobal: true }),
-	],
-	controllers: [],
-	providers: [],
+    imports: [
+        PostsModule,
+        ProfileModule,
+        AuthModule,
+        ConfigModule.forRoot({ isGlobal: true }),
+    ],
+    controllers: [],
+    providers: [],
 })
 export class AppModule {}

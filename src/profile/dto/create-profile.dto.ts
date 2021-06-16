@@ -1,6 +1,6 @@
 export class CreateProfileDto {
-	name: string;
-	email: string;
-	password: string;
-	phone: string;
+    name: string;
+    email: string;
+    password: string;
+    phone: string;
 }

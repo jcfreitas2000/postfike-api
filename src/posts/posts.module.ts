@@ -6,8 +6,8 @@ import { PostsController } from './posts.controller';
 import { PostsService } from './posts.service';
 
 @Module({
-	imports: [BookmarksModule, ViewsModule, ImagesModule],
-	controllers: [PostsController],
-	providers: [PostsService],
+    imports: [BookmarksModule, ViewsModule, ImagesModule],
+    controllers: [PostsController],
+    providers: [PostsService],
 })
 export class PostsModule {}
